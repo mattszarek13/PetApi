@@ -1,0 +1,12 @@
+.pet-card {
+    width: 250px;
+    height: 250px;
+}
+mat-card-header {
+    margin-bottom: 10px;
+}
+.image {
+    object-fit: cover;
+    height: 60%;
+    width: 60%;
+}

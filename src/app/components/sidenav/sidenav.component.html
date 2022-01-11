@@ -1,0 +1,27 @@
+<mat-sidenav-container>
+    <mat-sidenav #sidenav class='app-sidenav' mode="side" opened>
+        <mat-toolbar>
+            <h3 class="nav-">Find a Pet</h3>
+        </mat-toolbar>
+
+        <mat-nav-list>
+            <a [routerLink]="['/home']"><mat-list-item>Home</mat-list-item></a>
+            <a [routerLink]="['/pets/cats']"><mat-list-item>Cats</mat-list-item></a>
+            <a [routerLink]="['/pets/dogs']"><mat-list-item>Dogs</mat-list-item></a>
+            <a [routerLink]="['/pets/birds']"><mat-list-item>Birds</mat-list-item></a>
+            <a [routerLink]="['/pets/reptiles']"><mat-list-item>Reptiles</mat-list-item></a>
+            <a [routerLink]="['/pets/other']"><mat-list-item>Other</mat-list-item></a>
+            <a [routerLink]="['/pets/all']"><mat-list-item>Browse All Pets</mat-list-item></a>
+        </mat-nav-list>
+        
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="app-container">
+            <div class="app-sidenav-content">
+              <div class="wrapper">
+                <router-outlet></router-outlet>
+              </div>
+            </div>
+          </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
