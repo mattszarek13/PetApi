@@ -7,13 +7,15 @@
         <h3>Find the right pet for you, right here.</h3>
     </mat-card-content>
 </mat-card>
-<mat-card>
-    <mat-divider></mat-divider>
-</mat-card>
 
 <!--Implement pet filters here-->
+<!--Todo-->
+<!--Filter by breed-->
+<!--^^Query database for all breeds of pets, add breeds to response if they exist, return JSON of breeds-->
+<!--ngFor on checkboxes for breed options-->
+<app-pet-filter></app-pet-filter>
 
-<mat-card>
+<mat-card class='featured-pets'>
     <mat-card-header>
         <mat-card-title>Featured Pets</mat-card-title>
     </mat-card-header>
@@ -25,7 +27,7 @@
                 </mat-card-header>
                 <mat-card-content>
                     <a [routerLink]="['/pet', pet.id]">
-                        <img class='image' mat-card-image src={{pet.pictures[0]}} />
+                        <img class='image' mat-card-image src={{pet.picture}} />
                     </a>
                 </mat-card-content>
             </mat-card>

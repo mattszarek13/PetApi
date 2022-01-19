@@ -14,6 +14,8 @@ import { YesNoPipe } from './pipes/yes-no.pipe';
 import { PetsComponent } from './components/pets/pets.component';
 import { PetFilterComponent } from './components/pet-filter/pet-filter.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,10 @@ import { HttpClientModule } from '@angular/common/http';
     NgbModule,
     BrowserAnimationsModule,
     MaterialExportModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

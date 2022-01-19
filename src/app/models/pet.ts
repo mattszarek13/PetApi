@@ -5,5 +5,8 @@ export interface  IPet {
     gender: string,
     bio: string,
     type: string,
-    picture: string
+    picture: string,
+    price: number,
+    city: string,
+    state: string
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IPet } from 'src/app/models/pet';
 import { PetService } from 'src/app/services/pet.service';
 
 @Component({
@@ -7,7 +8,8 @@ import { PetService } from 'src/app/services/pet.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  public featuredPets!: any[];
+  public featuredPets!: IPet[];
+
   constructor(private petService: PetService) { }
 
   ngOnInit(): void {
@@ -15,7 +17,8 @@ export class HomeComponent implements OnInit {
   }
 
   populateFeaturedPets() {
-    this.featuredPets = this.petService.getFeaturedPets();
+    this.petService.getFeaturedPets().subscribe(data => {
+        this.featuredPets = data;
+    });
   }
-
 }

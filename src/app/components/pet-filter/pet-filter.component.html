@@ -1,1 +1,98 @@
-<p>pet-filter works!</p>
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+            Filter Pets
+        </mat-panel-title>
+        <mat-panel-description>
+            Filters
+        </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <form  [formGroup]='filters' (ngSubmit)="onSubmit()">
+        <section class='pet-type-filter'>
+            <ul class='pet-type-options'>
+                <li><mat-checkbox formControlName='cats'>Cats</mat-checkbox></li>
+                    <ul class='pet-breed-filters'>
+                        <li *ngFor="let breed of catBreeds.controls; let i=index" formArrayName="catBreeds">
+                            <mat-checkbox formControlName="{{i}}" id="{{i}}">{{catBreedList[i]}}</mat-checkbox>
+                        </li>
+                    </ul>
+                <li><mat-checkbox formControlName='dogs'>Dogs</mat-checkbox></li>
+                <ul class='pet-breed-filters'>
+                    <li *ngFor="let breed of dogBreeds.controls; let i=index" formArrayName="dogBreeds">
+                        <mat-checkbox formControlName="{{i}}" id="{{i}}">{{dogBreedList[i]}}</mat-checkbox>
+                    </li>
+                </ul>
+                <li><mat-checkbox formControlName='birds'>Birds</mat-checkbox></li>
+                <ul class='pet-breed-filters'>
+                    <li *ngFor="let breed of birdBreeds.controls; let i=index" formArrayName="birdBreeds">
+                        <mat-checkbox formControlName="{{i}}" id="{{i}}">{{birdBreedList[i]}}</mat-checkbox>
+                    </li>
+                </ul>
+                <li><mat-checkbox formControlName='reptiles'>Reptiles</mat-checkbox></li>
+                <ul class='pet-breed-filters'>
+                    <li *ngFor="let breed of reptileBreeds.controls; let i=index" formArrayName="reptileBreeds">
+                        <mat-checkbox formControlName="{{i}}" id="{{i}}">{{reptileBreedList[i]}}</mat-checkbox>
+                    </li>
+                </ul>
+                <li><mat-checkbox formControlName='other'>Other</mat-checkbox></li>
+                <ul class='pet-breed-filters'>
+                    <li *ngFor="let breed of otherBreeds.controls; let i=index" formArrayName="otherBreeds">
+                        <mat-checkbox formControlName="{{i}}" id="{{i}}">{{otherBreedList[i]}}</mat-checkbox>
+                    </li>
+                </ul>
+            </ul>
+        </section>
+
+        <section class='pet-age-filter'>
+                <mat-form-field>
+                    <mat-label>Min Age</mat-label>
+                    <mat-select formControlName="minimumAge">
+                        <mat-option *ngFor="let min of minAgeRange" [value]="min">{{min}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Max Age</mat-label>
+                    <mat-select formControlName="maximumAge">
+                        <mat-option *ngFor="let max of maxAgeRange" [value]="max">{{max}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+        </section>
+
+        <section class='pet-gender-filter'>
+                <mat-radio-group formControlName="gender">
+                    <mat-radio-button [value]="true" >Male</mat-radio-button>
+                    <mat-radio-button [value]="false">Female</mat-radio-button>
+                </mat-radio-group>
+        </section>
+
+        <section class='pet-price-filter'>
+            <mat-form-field>
+                <mat-label>Min Price</mat-label>
+                <input matInput formControlName="minimumPrice" placeholder="Min Price" type="number" step="0.01"/>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Max Price</mat-label>
+                <input matInput formControlName="maximumPrice" placeholder="Max Price" type="number" step="0.01"/>
+            </mat-form-field>
+        </section>
+
+        <section class='pet-location-filter'>
+            <mat-form-field appearance="fill">
+                <mat-label>City</mat-label>
+                <input matInput formControlName="city" placeholder="City" />
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>State</mat-label>
+                <input matInput formControlName="state" placeholder="State" />
+            </mat-form-field>
+        </section>
+
+        <button mat-raised-button type='submit'>Apply Filters</button>
+
+    </form>
+</mat-expansion-panel>
+
+
+<!--Testing filter form-->
+<br>{{filters.value | json}}

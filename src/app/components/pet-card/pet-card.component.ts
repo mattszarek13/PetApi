@@ -27,13 +27,13 @@ export class PetCardComponent implements OnInit {
       gender: data.gender,
       bio: data.bio,
       type: data.type,
-      picture: data.picture
+      picture: data.picture,
+      price: data.price,
+      city: data.city,
+      state: data.state
+      
     });
     //this.setType(this.pet);
-  }
-
-  populatePetCard() {
-
   }
 
 }

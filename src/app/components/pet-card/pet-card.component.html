@@ -9,6 +9,8 @@
             <mat-list-item>Age: {{ pet?.age }}</mat-list-item>
             <mat-list-item>Gender: {{ pet?.gender }}</mat-list-item>
             <mat-list-item>Bio: {{ pet?.bio }}</mat-list-item>
+            <mat-list-item>Price: {{ pet?.price | currency }}</mat-list-item>
+            <mat-list-item>Location: {{ pet?.city }}, {{ pet?.state }}</mat-list-item>
         </mat-list>
     </mat-card-content>
 </mat-card>
