@@ -16,6 +16,7 @@ import { PetFilterComponent } from './components/pet-filter/pet-filter.component
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { FilteredPetsComponent } from './components/filtered-pets/filtered-pets.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { CommonModule } from '@angular/common';
     PetCardComponent,
     YesNoPipe,
     PetsComponent,
-    PetFilterComponent
+    PetFilterComponent,
+    FilteredPetsComponent
   ],
   imports: [
     BrowserModule,

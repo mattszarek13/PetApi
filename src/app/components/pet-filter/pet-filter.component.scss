@@ -1,19 +1,38 @@
 .pet-type-filter {
-    display: inline-flex;
+    display: flex;
+    flex-direction: row;
 }
 
 .pet-age-filter {
-    display: inline-flex;
+    display: flex;
+    flex-direction: row;
 }
 
 .pet-gender-filter {
-    display: inline-flex;
+    display: flex;
+    flex-direction: row;
+}
+
+mat-radio-group {
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
 }
 
 .pet-type-options {
     list-style-type: none;
+    display: flex;
+    flex-direction: row;
 }
 
-.pet-breed-filters {
-    list-style-type: none;
+.pet-type-options li {
+    margin: 5px;
+}
+
+.pet-price-filter {
+    display: flex;
+    flex-direction: row;
+}
+.pet-location-filter {
+    display: flex;
 }

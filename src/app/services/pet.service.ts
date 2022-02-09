@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, throwError } from 'rxjs';
 import { IPet } from '../models/pet';
 
 @Injectable({
@@ -10,7 +9,6 @@ export class PetService {
   apiString: string = 'https://localhost:5001/api/Pets/';
   constructor(private http: HttpClient) { }
   
-
   getAllPets() {
     return this.http.get<IPet>(this.apiString);
   }
@@ -29,7 +27,6 @@ export class PetService {
   }
 
   getFeaturedPets() {
-    //temporary code for populating featured pets
     return this.http.get<IPet[]>(this.apiString + 'featured');
   }
 
@@ -38,7 +35,7 @@ export class PetService {
     return this.http.get<string[]>(this.apiString + toAppend);
   }
 
-  getPetsWithFilters(filters: string[]) {
-    
+  getPetsWithFilters(filters: string) {
+    return this.http.get<IPet[]>(this.apiString + 'filterPets/' + filters);
   }
 }

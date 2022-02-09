@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { IPet } from 'src/app/models/pet';
 import { PetService } from 'src/app/services/pet.service';
 
-import { YesNoPipe } from 'src/app/pipes/yes-no.pipe';
-
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -33,7 +31,7 @@ export class PetCardComponent implements OnInit {
       state: data.state
       
     });
-    //this.setType(this.pet);
+    
   }
 
 }

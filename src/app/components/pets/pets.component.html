@@ -1,18 +1,14 @@
 <mat-grid-list class='pets-list' cols="4">
     <mat-grid-tile *ngFor='let pet of pets' class="pets-tile">
-        <mat-card class="pet-card">
-            <mat-card-header>
-                <mat-card-title>{{pet.name}}</mat-card-title>
-            </mat-card-header>
-            <mat-card-content>
-                <a [routerLink]="['/pet', pet.id]">
-                    <img class="image" src={{pet.picture}} />
-                </a>
-            </mat-card-content>
-        </mat-card>
+        <a [routerLink]="['/pet', pet.id]">
+            <mat-card class="pet-card">
+                <mat-card-header>
+                    <mat-card-title>{{pet.name}}</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                        <img class="image" src={{pet.picture}} />
+                </mat-card-content>
+            </mat-card>
+        </a>
     </mat-grid-tile>
 </mat-grid-list>
-
-<mat-paginator>
-    
-</mat-paginator>

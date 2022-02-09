@@ -1,18 +1,3 @@
-<mat-card>
-    <mat-card-header>
-        <mat-card-title>Pet Adoption Site!</mat-card-title>
-    </mat-card-header>
-
-    <mat-card-content>
-        <h3>Find the right pet for you, right here.</h3>
-    </mat-card-content>
-</mat-card>
-
-<!--Implement pet filters here-->
-<!--Todo-->
-<!--Filter by breed-->
-<!--^^Query database for all breeds of pets, add breeds to response if they exist, return JSON of breeds-->
-<!--ngFor on checkboxes for breed options-->
 <app-pet-filter></app-pet-filter>
 
 <mat-card class='featured-pets'>
@@ -21,16 +6,16 @@
     </mat-card-header>
     <mat-grid-list class='featured-pets-list' cols="4">
         <mat-grid-tile *ngFor='let pet of featuredPets' class="featured-pets-tile">
-            <mat-card class="featured-pet-card">
-                <mat-card-header>
-                    <mat-card-title>{{pet.name}}</mat-card-title>
-                </mat-card-header>
-                <mat-card-content>
-                    <a [routerLink]="['/pet', pet.id]">
-                        <img class='image' mat-card-image src={{pet.picture}} />
-                    </a>
-                </mat-card-content>
-            </mat-card>
+            <a [routerLink]="['/pet', pet.id]">
+                <mat-card class="featured-pet-card">
+                    <mat-card-header>
+                        <mat-card-title>{{pet.name}}</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <img mat-card-image class='image' src={{pet.picture}} />
+                    </mat-card-content>
+                </mat-card>
+            </a>
         </mat-grid-tile>
     </mat-grid-list>
 </mat-card>
